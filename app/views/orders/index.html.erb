@@ -1,6 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Orders</h1>
+<h5><%= link_to 'Users', users_path %></h5>
 
 <table>
   <thead>
@@ -29,7 +30,7 @@
         <td><%= order.serial %></td>
         <td><%= order.ship_date %></td>
         <td><%= order.purchase_order %></td>
-        <td><%= order.user_id %></td>
+        <td><%= link_to "#{order.user.first_name} #{order.user.last_name}", order.user %></td>
         <td><%= link_to 'Show', order %></td>
         <td><%= link_to 'Edit', edit_order_path(order) %></td>
         <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
