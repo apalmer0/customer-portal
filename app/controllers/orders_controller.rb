@@ -1,10 +1,11 @@
 class OrdersController < ApplicationController
   before_action :set_order, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /orders
   # GET /orders.json
   def index
-    @orders = Order.all
+    @orders = current_user.orders
   end
 
   # GET /orders/1
