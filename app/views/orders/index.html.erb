@@ -11,7 +11,8 @@
       <th>Equipment type</th>
       <th>Make</th>
       <th>Model</th>
-      <th>Serial</th>
+      <th>Serial #</th>
+      <th>Current Status</th>
       <th>Estimated Ship date</th>
       <th>Purchase order</th>
     </tr>
@@ -26,6 +27,7 @@
         <td><%= order.make %></td>
         <td><%= order.model %></td>
         <td><%= order.serial %></td>
+        <td><%= order.status.humanize %></td>
         <td><%= order.ship_date %></td>
         <td><%= order.purchase_order %></td>
       </tr>
