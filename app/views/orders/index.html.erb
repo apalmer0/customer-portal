@@ -1,5 +1,12 @@
 <%= content_for(:user_name, @current_user.full_name) %>
-<p id="notice"><%= notice %></p>
+<% if notice %>
+  <div class="alert alert-primary" role="alert">
+    <%= notice %>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+<% end %>
 
 <div class="container">
   <h1 class="company-name"><%= @company_name %></h1>
