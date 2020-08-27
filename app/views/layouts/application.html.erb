@@ -7,9 +7,27 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href=“https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap” rel=“stylesheet”>
   </head>
 
   <body>
+    <nav class="navbar navbar-expand-md navbar-light bg-light">
+      <%= render :partial => 'svg/logo' %>
+      <h4 class="site-name">Customer Portal</h4>
+
+      <% if content_for(:user_name) %>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link"><%= content_for(:user_name) %></a>
+            </li>
+            <li class="nav-item">
+              <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "nav-link" %>
+            </li>
+          </ul>
+        </div>
+      <% end %>
+    </nav>
     <%= yield %>
   </body>
 </html>

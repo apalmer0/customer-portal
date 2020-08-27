@@ -10,4 +10,8 @@ class User < ApplicationRecord
   def company_name
     company.name
   end
+
+  def full_name
+    "#{first_name} #{last_name}".titleize
+  end
 end

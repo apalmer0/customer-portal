@@ -6,6 +6,7 @@ class OrdersController < ApplicationController
   # GET /orders.json
   def index
     @orders = current_user.company.orders
+    @current_user = current_user
     @company_name = current_user.company_name
   end
 
